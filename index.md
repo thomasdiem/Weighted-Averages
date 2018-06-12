@@ -14,17 +14,11 @@
 </form>
 <script type="text/javascript">
 	inputfunc = function() {
-	
     	var a = parseFloat(document.getElementById("a").value);
-	
     	var aweight = parseFloat(document.getElementById("aweight").value);
-	
     	var b = parseFloat(document.getElementById("b").value);
-	
     	var bweight = parseFloat(document.getElementById("bweight").value);
-	
     	var c = parseFloat(document.getElementById("c").value);
-	
     	var cweight = parseFloat(document.getElementById("cweight").value);
         
         if (isNaN(a)) a = 0;

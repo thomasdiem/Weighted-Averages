@@ -11,31 +11,27 @@
  </fieldset>
  <button type="button" onclick="inputfunc()">Calculate</button>
  <p id="score">Score: </p>
-</form>
-<script type="text/javascript">
-	inputfunc = function() {
-    	var a = parseFloat(document.getElementById("a").value);
-    	var aweight = parseFloat(document.getElementById("aweight").value);
-    	var b = parseFloat(document.getElementById("b").value);
-    	var bweight = parseFloat(document.getElementById("bweight").value);
-    	var c = parseFloat(document.getElementById("c").value);
-    	var cweight = parseFloat(document.getElementById("cweight").value);
-        
-        if (isNaN(a)) a = 0;
-        if (isNaN(aweight)) aweight = 0;
-        if (isNaN(b)) b = 0;
-        if (isNaN(bweight)) bweight = 0;
-        if (isNaN(c)) c = 0;
-        if (isNaN(cweight)) cweight = 0;
-        
-        var score = a*aweight/100 + b*bweight/100 + c*cweight/100;
-        
-        if (aweight + bweight + cweight != 100) {
-         document.getElementById("score").innerHTML = "weights don't add up to 100"
-        } else {
-            document.getElementById("score").innerHTML = "Score: " + score.toString();
-        }
-    }
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+float get_weight_score(const char* score_name) {
+char score_chars[20];
+char weight_chars[20];
+printf("Enter score for %s: ", score_name);
+scanf("%s", score_chars);
+printf("Enter weight %% for %s: ", score_name);
+scanf("%s", weight_chars);
+return atof(score_chars)*atof(weight_chars)/100.0f;
+} 
+void main() {
+const char *names[3] = {"a", "b", "c"};
+float totalWeighted = 0.0f;
+for (int i = 0; i < sizeof(names/sizeof(names[0]); i++) {
+totalWeighted += get_weighted_score(name[i]);
+printf("\n");
+}
+printf("Weighted score is %.3f\n%%", totalWeighted);
+}
 </script>
 </body>
 </html>
